@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局背景：渐变贯穿，无白色断层 */
+body {
+    background: linear-gradient(135deg, rgba(22, 93, 255, 0.1) 0%, rgba(255, 125, 0, 0.1) 100%) fixed;
+}
+
+/* 导航栏：透明毛玻璃，无白色底框 */
+#main-nav {
+    background-color: transparent !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 英雄区域：减少顶部内边距，消除空白 */
+header {
+    padding-top: 16vh; /* 视口高度适配，避免固定值导致空白 */
+    padding-bottom: 2rem; /* 减少底部内边距 */
+    background: inherit !important; /* 继承 body 渐变 */
+}
+
+/* 主内容区：无白色背景，直接继承渐变 */
+main {
+    background-color: transparent !important; /* 关键：移除白色背景 */
+    padding-top: 2rem; /* 大幅减少顶部空白 */
+}
+
+/* 所有卡片：强制透明背景（覆盖 HTML 中残留的 bg-white） */
+.rounded-xl, .shadow-md, .shadow-lg, .card-hover {
+    background-color: transparent !important; /* 彻底覆盖任何白色背景 */
+}
+
+/* 卡片悬停：仅阴影和位移 */
+.card-hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(22, 93, 255, 0.1);
+}
+
+/* 移除所有悬浮圆和泡沫动画（确保无残留） */
+.card-hover:hover::before,
+.card-hover:hover::after {
+    content: none !important;
+}
+
+/* 联系表单：渐变背景与全局统一 */
+section.py-16 {
+    background: linear-gradient(135deg, rgba(22, 93, 255, 0.05) 0%, rgba(255, 125, 0, 0.05) 100%);
+    margin-top: 2rem; /* 调整与上方内容的间距 */
+}
+
+/* 页脚：保持深色背景，与渐变无冲突 */
+footer {
+    margin-top: 4rem; /* 调整页脚与上方内容的间距 */
+}
