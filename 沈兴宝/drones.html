@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无人机 - 摄影器材大全</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- 同步第一版 Tailwind 颜色配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',    // 主色（蓝色）
+                        secondary: '#FF7D00',  // 次色（橙色）
+                        dark: '#1E293B',       // 深色（深灰蓝）
+                        light: '#F8FAFC'       // 浅色（浅灰白）
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-light text-dark font-sans">
+    <!-- 导航栏 -->
+    <nav id="main-nav" class="fixed w-full bg-white/90 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center">
+                <i class="fa fa-camera-retro mr-2"></i>
+                <span>摄影器材大全</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="font-medium hover:text-primary transition-colors">首页</a>
+                <a href="cameras.html" class="font-medium hover:text-primary transition-colors">相机</a>
+                <a href="action-cameras.html" class="font-medium hover:text-primary transition-colors">运动相机</a>
+                <a href="drones.html" class="font-medium hover:text-primary transition-colors nav-active">无人机</a>
+                <a href="gimbals.html" class="font-medium hover:text-primary transition-colors">云台</a>
+                <a href="fpv.html" class="font-medium hover:text-primary transition-colors">穿越机</a>
+                <a href="accessories.html" class="font-medium hover:text-primary transition-colors">配件</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menu-toggle" class="md:hidden text-dark text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html" class="font-medium hover:text-primary transition-colors py-2">首页</a>
+                <a href="cameras.html" class="font-medium hover:text-primary transition-colors py-2">相机</a>
+                <a href="action-cameras.html" class="font-medium hover:text-primary transition-colors py-2">运动相机</a>
+                <a href="drones.html" class="font-medium hover:text-primary transition-colors py-2 nav-active">无人机</a>
+                <a href="gimbals.html" class="font-medium hover:text-primary transition-colors py-2">云台</a>
+                <a href="fpv.html" class="font-medium hover:text-primary transition-colors py-2">穿越机</a>
+                <a href="accessories.html" class="font-medium hover:text-primary transition-colors py-2">配件</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-br from-primary/10 to-secondary/10">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold text-dark mb-6 text-shadow">
+                <i class="fa fa-paper-plane mr-2 text-primary"></i>无人机
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                从航拍创作到专业测绘，高品质无人机为您提供独特视角，捕捉震撼画面
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- 子分类导航 -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <a href="#" class="px-6 py-2 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-50 hover:text-primary transition-colors">全部无人机</a>
+            <a href="#" class="px-6 py-2 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-50 hover:text-primary transition-colors">消费级</a>
+            <a href="#" class="px-6 py-2 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-50 hover:text-primary transition-colors">专业级</a>
+            <a href="#" class="px-6 py-2 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-50 hover:text-primary transition-colors">迷你型</a>
+            <a href="#" class="px-6 py-2 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-50 hover:text-primary transition-colors">行业应用</a>
+        </div>
+
+        <!-- 产品列表 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- 大疆Mavic 4 Pro -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/ab8a2879aa665f95bd1dfba291fb6919@ultra.webp" alt="大疆Mavic 4 Pro" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">旗舰级</span>
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <span class="ml-1 text-sm text-gray-500">5.0</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark">大疆Mavic 4 Pro</h3>
+                    <p class="text-gray-600 mb-4 whitespace-normal">
+                        三镜头设计（24mm/70mm/166mm），哈苏主摄，1英寸传感器，10-bit D-Log M色彩，46分钟续航，全向双目视觉避障。
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">¥13,888</span>
+                        <a href="https://www.dji.com/cn/mavic-4-pro?site=brandsite&from=insite_search" 
+                           class="text-gray-600 hover:text-primary hover:underline hover:border-b-2 hover:border-primary font-medium transition-all duration-200"
+                           target="_blank" rel="noopener noreferrer">
+                            查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大疆Mini 4 Pro -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/f96def8770cb7529d7a98731fa2117dd@ultra.jpg" alt="大疆Mini 4 Pro" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-medium rounded-full">热门</span>
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star-half-o text-yellow-400"></i>
+                            <span class="ml-1 text-sm text-gray-500">4.7</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark">大疆 Mini 4 Pro</h3>
+                    <p class="text-gray-600 mb-4 whitespace-normal">
+                        249克超轻机身，4K/60fps视频，1/1.3英寸传感器，全向避障，支持竖拍模式，34分钟续航。
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">¥4,788</span>
+                        <a href="https://www.dji.com/cn/mini-4-pro?site=brandsite&from=insite_search" 
+                           class="text-gray-600 hover:text-primary hover:underline hover:border-b-2 hover:border-primary font-medium transition-all duration-200"
+                           target="_blank" rel="noopener noreferrer">
+                            查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大疆Inspire 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/f403932cbb6c7fe5fdab2ef6b600a463@origin.jpg" alt="大疆Inspire 3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-medium rounded-full">专业级</span>
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <span class="ml-1 text-sm text-gray-500">5.0</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark">大疆 Inspire 3</h3>
+                    <p class="text-gray-600 mb-4 whitespace-normal">
+                        电影级无人机，全画幅传感器，8K/75fps视频，支持竖拍，双控系统，双电池设计，42分钟续航，专业影视制作首选。
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">¥79,888</span>
+                        <a href="https://www.dji.com/cn/inspire-3?site=brandsite&from=insite_search" 
+                           class="text-gray-600 hover:text-primary hover:underline hover:border-b-2 hover:border-primary font-medium transition-all duration-200"
+                           target="_blank" rel="noopener noreferrer">
+                            查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大疆Mavic 3 Classic -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/000bc1714d73291b3086af321da883a9@origin.jpg" alt="大疆Mavic 3 Classic" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">性价比</span>
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star-half-o text-yellow-400"></i>
+                            <span class="ml-1 text-sm text-gray-500">4.6</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark">大疆 Mavic 3 Classic</h3>
+                    <p class="text-gray-600 mb-4 whitespace-normal">
+                        哈苏相机，4/3 CMOS，5.1K视频，46分钟续航，全向避障，适合专业航拍需求。
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">¥7,988</span>
+                        <a href="https://www.dji.com/cn/support/product/mavic-3-classic" 
+                           class="text-gray-600 hover:text-primary hover:underline hover:border-b-2 hover:border-primary font-medium transition-all duration-200"
+                           target="_blank" rel="noopener noreferrer">
+                            查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autel Evo Lite+ -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://www.autelrobotics.cn/wp-content/themes/autel/PC/proimg/z174.png" alt="Autel Evo Lite+" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-medium rounded-full">高性价比</span>
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star-o text-yellow-400"></i>
+                            <span class="ml-1 text-sm text-gray-500">4.2</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark">Autel Evo Lite+</h3>
+                    <p class="text-gray-600 mb-4 whitespace-normal">
+                        1英寸传感器，5.4K视频，40分钟续航，全向避障，支持10-bit D-Log M色彩模式。
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">¥6,288</span>
+                        <a href="https://www.autelrobotics.cn/productdetail/evo-lite-enterprise-series/#jsgg" 
+                           class="text-gray-600 hover:text-primary hover:underline hover:border-b-2 hover:border-primary font-medium transition-all duration-200"
+                           target="_blank" rel="noopener noreferrer">
+                            查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 大疆Air 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                <div class="h-56 overflow-hidden">
+                    <img src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/5f8590bc160545bb7066c2cf9443c8e1@ultra.jpg" alt="大疆Air 3S" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">轻便旗舰</span>
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star text-yellow-400"></i>
+                            <i class="fa fa-star-half-o text-yellow-400"></i>
+                            <span class="ml-1 text-sm text-gray-500">4.8</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-dark">大疆 Air 3S</h3>
+                    <p class="text-gray-600 mb-4 whitespace-normal">
+                        1英寸 CMOS 主摄大，双摄 4K/60fps HDR 视频、14挡动态范围，自由全景照片，45 分钟续航，20 公里图传。
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">¥9,988</span>
+                        <a href="https://www.dji.com/cn/air-3s?site=brandsite&from=insite_search" 
+                           class="text-gray-600 hover:text-primary hover:underline hover:border-b-2 hover:border-primary font-medium transition-all duration-200"
+                           target="_blank" rel="noopener noreferrer">
+                            查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">摄影器材大全</h3>
+                    <p class="text-gray-400 mb-4">
+                        专业的摄影设备指南平台，为摄影爱好者提供全面的器材信息和购买建议。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">器材分类</h3>
+                    <ul class="space-y-2">
+                        <li><a href="cameras.html" class="text-gray-400 hover:text-white transition-colors">相机</a></li>
+                        <li><a href="action-cameras.html" class="text-gray-400 hover:text-white transition-colors">运动相机</a></li>
+                        <li><a href="drones.html" class="text-gray-400 hover:text-white transition-colors">无人机</a></li>
+                        <li><a href="gimbals.html" class="text-gray-400 hover:text-white transition-colors">云台</a></li>
+                        <li><a href="fpv.html" class="text-gray-400 hover:text-white transition-colors">穿越机</a></li>
+                        <li><a href="accessories.html" class="text-gray-400 hover:text-white transition-colors">配件</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">使用教程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">联系方式</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">福州市闽侯县荆溪镇福州英华职业学院学生宿舍6406室</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">19993542761</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">671661303@qq.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+                <p>© 2025 摄影器材大全. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 translate-y-20 opacity-0">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
