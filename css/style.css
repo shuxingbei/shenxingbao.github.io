@@ -32,6 +32,13 @@ main {
     background-color: transparent !important; /* 彻底覆盖任何白色背景 */
 }
 
+/* 在 style.css 中添加 */
+img {
+  image-rendering: -webkit-optimize-contrast; /* 像素化缩放，保留边缘细节（适合照片缩小） */
+  /* 或更细腻的优化（Webkit 专属） */
+  -webkit-image-rendering: optimize-contrast;
+}
+
 /* 卡片悬停：仅阴影和位移 */
 .card-hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -59,3 +66,4 @@ section.py-16 {
 footer {
     margin-top: 4rem; /* 调整页脚与上方内容的间距 */
 }
+
